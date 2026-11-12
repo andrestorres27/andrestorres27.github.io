@@ -36,7 +36,13 @@ h3{font-size:19px;margin:32px 0 8px}
 .wip{color:var(--crimson)}
 p,ul,ol{max-width:68ch}
 li{margin-bottom:6px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:24px 0}
+ .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:24px 0}
+.cad-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cad-grid figure img{height:290px;object-fit:contain;background:#F8F9FB}
+.cad-grid figure.wide img{height:390px}
+@media (max-width:650px){.cad-grid{grid-template-columns:1fr}.cad-grid figure.wide img{height:300px}.cad-grid figure img{height:250px}}
+.portfolio-link{display:inline-block;margin-top:20px;padding:9px 16px;border:1px solid var(--crimson);color:var(--crimson);font-weight:600;text-decoration:none;border-radius:3px}
+.portfolio-link:hover{background:var(--crimson);color:#fff}
 figure{margin:0;background:var(--card);border:1px solid var(--line);padding:10px}
 figure img{display:block;width:100%;height:auto}
 figcaption{font-size:15px;color:var(--muted);padding-top:8px}
@@ -64,7 +70,8 @@ footer{border-top:2px solid var(--ink);padding:40px 0 64px;color:var(--muted);fo
   <div class="wrap">
     <h1>Andres Torres</h1>
     <p class="lead">Mechanical engineering undergraduate at Santa Clara University. My projects cover structural and fluid analysis, mechanism design, tolerancing, and energy-recovery systems, built with MATLAB, SolidWorks, and Onshape.</p>
-    <p class="meta">San Jose, CA &nbsp;|&nbsp; <a href="mailto:andres.t0496@gmail.com">andres.t0496@gmail.com</a> &nbsp;|&nbsp; Last updated November 10, 2026</p>
+    <p class="meta">San Jose, CA &nbsp;|&nbsp; <a href="mailto:andres.t0496@gmail.com">andres.t0496@gmail.com</a> &nbsp;|&nbsp; Last updated November 11, 2026</p>
+    <p><a class="portfolio-link" href="portfolio.pdf" target="_blank" rel="noopener noreferrer">View Complete Portfolio (16-page PDF)</a></p>
   </div>
 </header>
 
@@ -133,23 +140,23 @@ footer{border-top:2px solid var(--ink);padding:40px 0 64px;color:var(--muted);fo
     <div><small>Course</small><strong>MECH 171 GD&amp;T Exhibition</strong></div>
     <div><small>Software</small><strong>SolidWorks</strong></div>
     <div><small>Timeline</small><strong>Nov. 2026 – Present</strong></div>
-    <div><small>Status</small><strong class="wip">In progress</strong></div>
+    <div><small>Status</small><strong class="wip">Preliminary CAD complete; analysis in progress</strong></div>
   </div>
-  <p>This project examines the mechanical fit between an ESC keyboard keycap and the cross-shaped stem of its mating switch. It applies CAD modeling, geometric dimensioning and tolerancing (GD&amp;T), and tolerance analysis to study how geometric variation and assembly constraints affect fit, function, and manufacturability.</p>
-  <h3>Planned work</h3>
-  <ol>
-    <li><strong>CAD modeling:</strong> SolidWorks models of the keycap and switch mating features.</li>
-    <li><strong>GD&amp;T drawings:</strong> engineering drawings of critical features with geometric controls per ASME Y14.5.</li>
-    <li><strong>Tolerance stack-up:</strong> a governing functional requirement evaluated with at least two analysis methods.</li>
-    <li><strong>Exact-constraint assessment:</strong> identify potential over-constraints at the interface and evaluate their causes and implications.</li>
-  </ol>
-  <div class="next"><strong>Next update:</strong> preliminary CAD modeling is anticipated Nov. 20, 2026. Models and drawings will be added below.</div>
-  <div class="grid">
-    <figure><a href="images/keycap-switch-arrangement.jpg"><img src="images/keycap-switch-arrangement.jpg" alt="Keycap and switch arrangement on a keyboard" loading="lazy"></a><figcaption><strong>Figure 1.</strong> Keycap and switch arrangement.</figcaption></figure>
-    <figure><a href="images/switch-cross-stem.jpg"><img src="images/switch-cross-stem.jpg" alt="Switch with a cross-shaped stem" loading="lazy"></a><figcaption><strong>Figure 2.</strong> Cross-stem switch interface.</figcaption></figure>
-    <figure><a href="images/keycap-socket-switch.jpg"><img src="images/keycap-socket-switch.jpg" alt="Underside of a keycap beside its mating switch" loading="lazy"></a><figcaption><strong>Figure 3.</strong> Keycap socket and switch.</figcaption></figure>
-    <!-- ADD NEW FIGURES HERE: copy a <figure> line, change the image path, alt text, and caption -->
+  <p>Modeled a simplified ESC keyboard keycap and mating switch interface in SolidWorks to examine how the cross-shaped connection influences component fit, alignment, and potential manufacturing variation. The current work establishes preliminary component geometry and an assembly representation; final dimensions and tolerances are not yet specified.</p>
+
+  <h3>Completed CAD development</h3>
+  <ul>
+    <li><strong>Component modeling:</strong> Developed keycap geometry, the cross-shaped mating socket, and a simplified switch/stem representation.</li>
+    <li><strong>Assembly development:</strong> Positioned the modeled components to illustrate their intended engagement and alignment.</li>
+    <li><strong>Geometry inspection:</strong> Used exploded and transparent views to examine the internal connection and its mating features.</li>
+  </ul>
+  <h3>Preliminary CAD views</h3>
+  <div class="grid cad-grid">
+    <figure class="wide"><a href="images/keycap-exploded-assembly.png"><img src="images/keycap-exploded-assembly.png" alt="Exploded SolidWorks assembly of keyboard keycap above its cross-shaped switch stem" loading="lazy"></a><figcaption><strong>Figure 1.</strong> Exploded keycap–switch assembly displaying the mating interface.</figcaption></figure>
+    <figure><a href="images/keycap-transparent-assembly.png"><img src="images/keycap-transparent-assembly.png" alt="Transparent isometric assembly showing the internal keycap socket fitted over the switch stem" loading="lazy"></a><figcaption><strong>Figure 2.</strong> Transparent assembly view illustrating internal alignment.</figcaption></figure>
+    <figure><a href="images/keycap-socket-detail.png"><img src="images/keycap-socket-detail.png" alt="Bottom view of keycap showing central cross-shaped socket and surrounding support geometry" loading="lazy"></a><figcaption><strong>Figure 3.</strong> Internal keycap geometry and cross-shaped socket.</figcaption></figure>
   </div>
+  <div class="next"><strong>Next steps:</strong> Create dimensioned engineering drawings, select datum reference frames, apply GD&amp;T controls in accordance with ASME Y14.5, and conduct tolerance stack-up and exact-constraint assessments. No functional fit or production tolerances have been validated yet.</div>
 </div></section>
 
 <!-- ============ PROJECT 4 ============ -->
@@ -169,7 +176,7 @@ footer{border-top:2px solid var(--ink);padding:40px 0 64px;color:var(--muted);fo
     <li><strong>Power management and storage:</strong> a switched resistive load for repeatable power measurement and a battery-charging path to store recovered energy.</li>
     <li><strong>Prototype testing and validation:</strong> compare damping behavior, power output, recovered energy, and physical constraints against a conventional shock absorber.</li>
   </ol>
-  <div class="next"><strong>Next update:</strong> preliminary conventional and regenerative shock absorber CAD is anticipated Nov. 13, 2026, followed by the first 3D-printed prototype.</div>
+  <div class="next"><strong>Current progress:</strong> Preliminary SolidWorks modeling of the hydraulic chamber housing and separate rack-and-pinion transmission concept is complete. Detailed integration, fabrication, and bench testing are upcoming; energy-recovery and damping targets remain unvalidated.</div>
 
   <h3>Concept of operation and requirements</h3>
   <p>The concept converts suspension motion into useful electrical output, alongside the mechanical and thermal effects of damping. The table lists benchmark constraints for an EV-compatible prototype.</p>
@@ -194,6 +201,20 @@ footer{border-top:2px solid var(--ink);padding:40px 0 64px;color:var(--muted);fo
   <div class="grid"><figure class="wide"><a href="images/shock-transmission-tradeoff.jpg"><img src="images/shock-transmission-tradeoff.jpg" alt="Weighted trade-off matrix for five mechanical transmission concepts" loading="lazy"></a><figcaption><strong>Figure 3.</strong> Mechanical transmission weighted trade-off matrix.</figcaption></figure></div>
   <p><strong>Electrical subsystem.</strong> Five generator-loading and energy-management configurations were weighted on energy storage (30%), testing repeatability (25%), manufacturing and assembly (25%), damping (10%), and cost (10%). The switch-load and battery-charging system ranked first (+55), followed by rectifier with resistive load (+40).</p>
   <div class="grid"><figure class="wide"><a href="images/shock-electrical-tradeoff.jpg"><img src="images/shock-electrical-tradeoff.jpg" alt="Weighted trade-off matrix for five electrical subsystem configurations" loading="lazy"></a><figcaption><strong>Figure 4.</strong> Electrical subsystem weighted trade-off matrix.</figcaption></figure></div>
+
+  <h3>Preliminary CAD — Hydraulic Chamber Housing</h3>
+  <p>Developed a preliminary cylindrical shock absorber housing assembly in SolidWorks to establish outer geometry, end-connection features, and the spatial arrangement of internal components. Transparent assembly views illustrate the intended chamber layout; sealing, fluid behavior, and structural performance have not yet been assessed experimentally.</p>
+  <div class="grid cad-grid">
+    <figure><a href="images/shock-housing-assembly.png"><img src="images/shock-housing-assembly.png" alt="Opaque isometric SolidWorks assembly of the cylindrical hydraulic shock absorber housing and end connections" loading="lazy"></a><figcaption><strong>Figure 5.</strong> Exterior hydraulic chamber housing assembly.</figcaption></figure>
+    <figure><a href="images/shock-housing-transparent.png"><img src="images/shock-housing-transparent.png" alt="Transparent SolidWorks view revealing internal cylindrical components inside the hydraulic housing" loading="lazy"></a><figcaption><strong>Figure 6.</strong> Transparent view of internal housing arrangement.</figcaption></figure>
+  </div>
+
+  <h3>Preliminary CAD — Rack-and-Pinion Transmission</h3>
+  <p>Modeled a separate rack-and-pinion transmission concept with a gear shaft and bevel-gear arrangement intended to translate linear suspension travel into rotary motion for a generator. These views establish conceptual mating geometry; the mechanism has not yet been fully integrated with the hydraulic housing or validated for motion, loading, or power output.</p>
+  <div class="grid cad-grid">
+    <figure><a href="images/shock-rack-pinion-isometric.png"><img src="images/shock-rack-pinion-isometric.png" alt="SolidWorks isometric model of the linear rack, pinion and bevel-gear transmission mounted to a cylindrical housing" loading="lazy"></a><figcaption><strong>Figure 7.</strong> Rack-and-pinion transmission concept.</figcaption></figure>
+    <figure><a href="images/shock-gear-train-detail.png"><img src="images/shock-gear-train-detail.png" alt="Close-up CAD model of rack teeth, spur pinion, shaft, supports and bevel gear pair" loading="lazy"></a><figcaption><strong>Figure 8.</strong> Gear-train detail showing rack, pinion, shaft, and bevel gears.</figcaption></figure>
+  </div>
 </div></section>
 
 </main>
